@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
+    /** @use HasFactory<\Database\Factories\PatientFactory> */
     use HasFactory, HasUuids;
 
     /**

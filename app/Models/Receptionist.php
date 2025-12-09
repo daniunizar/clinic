@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Receptionist extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
+    /** @use HasFactory<\Database\Factories\ReceptionistFactory> */
     use HasFactory, Notifiable, HasUuids;
 
     /**
