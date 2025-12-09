@@ -29,5 +29,9 @@ class DatabaseSeeder extends Seeder
             'password' => 'Sample123!'
         ]);
         Patient::factory(10)->create();
+
+        $this->call([
+            SpecialitySeeder::class
+        ]);
     }
 }
