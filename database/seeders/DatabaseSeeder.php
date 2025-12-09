@@ -32,7 +32,8 @@ class DatabaseSeeder extends Seeder
         Patient::factory(10)->create();
 
         $this->call([
-            SpecialitySeeder::class
+            SpecialitySeeder::class,
+            TreatmentSeeder::class,
         ]);
 
         Dentist::factory(10)->create();
