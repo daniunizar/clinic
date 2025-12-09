@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Dentist;
 use App\Models\Patient;
 use App\Models\Receptionist;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -33,5 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SpecialitySeeder::class
         ]);
+
+        Dentist::factory(10)->create();
     }
 }
