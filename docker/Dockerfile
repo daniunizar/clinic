@@ -19,7 +19,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /var/www/html
 
 # Copy default vhost (optional, candidate can replace)
-# COPY ./docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY ./docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 # Expose port 80
 EXPOSE 80
