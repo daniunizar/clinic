@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Patient;
 use App\Models\Receptionist;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -27,5 +28,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'sample@mail.com',
             'password' => 'Sample123!'
         ]);
+        Patient::factory(10)->create();
     }
 }
