@@ -12,6 +12,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->register(\Src\Platform\Receptionist\Infrastructure\Providers\ReceptionistModuleServiceProvider::class);
+        $this->app->register(\Src\Platform\Patient\Infrastructure\Providers\PatientModuleServiceProvider::class);
     }
 
     /**
