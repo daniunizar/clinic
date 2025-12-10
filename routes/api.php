@@ -8,7 +8,6 @@ Route::prefix('patient')->group(base_path('src/Platform/Patient/Infrastructure/R
 Route::prefix('dentist')->group(base_path('src/Platform/Dentist/Infrastructure/Routes/Api.php'));
 Route::prefix('appointment')->group(base_path('src/Platform/Appointment/Infrastructure/Routes/Api.php'));
 
-
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
