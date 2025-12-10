@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('receptionist')->group(base_path('src/Platform/Receptionist/Infrastructure/Routes/Api.php'));
 Route::prefix('patient')->group(base_path('src/Platform/Patient/Infrastructure/Routes/Api.php'));
 Route::prefix('dentist')->group(base_path('src/Platform/Dentist/Infrastructure/Routes/Api.php'));
+Route::prefix('appointment')->group(base_path('src/Platform/Appointment/Infrastructure/Routes/Api.php'));
 
 
 Route::get('/user', function (Request $request) {
