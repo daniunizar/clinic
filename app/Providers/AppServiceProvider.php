@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(\Src\Platform\Receptionist\Infrastructure\Providers\ReceptionistModuleServiceProvider::class);
         $this->app->register(\Src\Platform\Patient\Infrastructure\Providers\PatientModuleServiceProvider::class);
         $this->app->register(\Src\Platform\Dentist\Infrastructure\Providers\DentistModuleServiceProvider::class);
+        $this->app->register(\Src\Platform\Appointment\Infrastructure\Providers\AppointmentModuleServiceProvider::class);
     }
 
     /**
