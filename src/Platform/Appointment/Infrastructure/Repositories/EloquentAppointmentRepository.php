@@ -3,8 +3,10 @@
 namespace Src\Platform\Appointment\Infrastructure\Repositories;
 
 use App\Models\Appointment as EloquentAppointment;
+use App\Models\AppointmentStatus as EloquentAppointmentStatus;
 use Src\Platform\Appointment\Domain\Contracts\AppointmentRepositoryInterface;
 use Src\Platform\Appointment\Domain\Entities\Appointment;
+use Src\Platform\Appointment\Domain\Entities\AppointmentStatus;
 
 class EloquentAppointmentRepository implements AppointmentRepositoryInterface
 {
@@ -41,5 +43,15 @@ class EloquentAppointmentRepository implements AppointmentRepositoryInterface
             $eloquent->description,
             $eloquent->appointment_status_id
         );
+    }
+
+    public function findAppointmentStatusByAppointmentStatusId(string $appointmentStatusId): ?AppointmentStatus
+    {
+        $eloquentAppointmentStatus = EloquentAppointmentStatus::find($appointmentStatusId);
+
+        if(!$eloquentAppointmentStatus){
+            return null;
+        };
+        return new AppointmentStatus($eloquentAppointmentStatus->id, $eloquentAppointmentStatus->label);
     }
 }
