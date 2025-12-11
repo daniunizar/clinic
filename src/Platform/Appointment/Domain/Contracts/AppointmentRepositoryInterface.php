@@ -13,4 +13,6 @@ interface AppointmentRepositoryInterface
 
     // Appointmen Statuses
     public function findAppointmentStatusByAppointmentStatusId(string $appointmentStatusId): ?AppointmentStatus;
+    
+    public function findAppointmentStatusByAppointmentStatusLabel(string $appointmentLabel): ?AppointmentStatus;
 }

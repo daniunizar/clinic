@@ -45,9 +45,23 @@ class EloquentAppointmentRepository implements AppointmentRepositoryInterface
         );
     }
 
+    /**
+     * Appointment Statuses
+     */
+    
     public function findAppointmentStatusByAppointmentStatusId(string $appointmentStatusId): ?AppointmentStatus
     {
         $eloquentAppointmentStatus = EloquentAppointmentStatus::find($appointmentStatusId);
+
+        if(!$eloquentAppointmentStatus){
+            return null;
+        };
+        return new AppointmentStatus($eloquentAppointmentStatus->id, $eloquentAppointmentStatus->label);
+    }
+    
+    public function findAppointmentStatusByAppointmentStatusLabel(string $appointmentStatusLabel): ?AppointmentStatus
+    {
+        $eloquentAppointmentStatus = EloquentAppointmentStatus::where('label', $appointmentStatusLabel)->first();
 
         if(!$eloquentAppointmentStatus){
             return null;
